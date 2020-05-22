@@ -15,6 +15,6 @@ public class MainActivity extends AppCompatActivity {
 
         textView = findViewById(R.id.textView);
 
-        textView.setText("깃버브 테스트용입니다.");
+        textView.setText("깃허브 테스트용입니다.");
     }
 }
