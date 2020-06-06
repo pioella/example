@@ -1,0 +1,2 @@
+rootProject.name='PermissionGrantedCheckEx'
+include ':app'

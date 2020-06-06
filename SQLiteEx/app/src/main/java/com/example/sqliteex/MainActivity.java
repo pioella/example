@@ -61,18 +61,18 @@ public class MainActivity extends AppCompatActivity {
                 editID.getText().toString().trim(), editPassword.getText().toString().trim());
         try {
             sqLiteDatabase.execSQL(sql);
-            sqLiteDatabase.close();
             onClickBtnSelect(view);
             Toast.makeText(getApplicationContext(), "데이터 입력됨!", Toast.LENGTH_SHORT).show();
         } catch (Exception e) {
             Toast.makeText(getApplicationContext(), "데이터 입력 오류!", Toast.LENGTH_SHORT).show();
         }
+        sqLiteDatabase.close();
     }
 
     public void onClickBtnUpdate(View view) {
         sqLiteDatabase = myDBHelper.getWritableDatabase();
         if (editID.getText().toString() != "") {
-            String sql = String.format("update memberTBL set password = '%s' where ID='%s'",
+            String sql = String.format("update memberTBL set password='%s' where ID='%s'",
                     editPassword.getText().toString().trim(), editID.getText().toString().trim());
             sqLiteDatabase.execSQL(sql);
         }
